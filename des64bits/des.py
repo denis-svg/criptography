@@ -222,6 +222,12 @@ def apply16Rounds(m:list, keys:dict, decrypt=False):
     
     return permutation(r + l, ip_1_matrix) # reverse the order of l and r
 
+def binMatrixToHexStr(bin_matrix):
+    bin_string = ''.join(map(str, bin_matrix))
+    integer_value = int(bin_string, 2)
+    hexadecimal_string = hex(integer_value)
+    return hexadecimal_string[2:]
+
 if __name__ == '__main__':
     key = [
         0, 0, 0, 1, 0, 0, 1, 1,
@@ -249,4 +255,9 @@ if __name__ == '__main__':
         group = encrypted[i:i+8]
         print(group)
 
+    # for testing
+    # http://des.online-domain-tools.com/
+    print(binMatrixToHexStr(m))
+    print(binMatrixToHexStr(key))
+    print(binMatrixToHexStr(apply16Rounds(m, keys, decrypt=False)))
     
