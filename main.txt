@@ -1,0 +1,44 @@
+from these two fundamental principles for selecting usable fieldciphers, kerckhoffs deduced
+six specific requirements: (1) the systemshould be, if not theoretically unbreakable,
+unbreakable in practice; (2)compromise of the system should not inconvenience the
+correspondents;(3) the key should be rememberable without notes and should be
+easilychangeable; (4) the cryptograms should be transmissible by telegraph; (5)the apparatus or
+documents should be portable and operable by a singleperson; (6) the system should be easy,
+neither requiring knowledge of along list of rules nor involving mental strain.these
+requirements still comprise the ideal which military ciphers aimat. they have been rephrased,
+and qualities that lie implicit have -beenmade explicit. but any modern cryptographer would
+be very happy if anycipher fulfilled all six.of course, it has never been possible to do that.
+there appears to be acertain incompatibility among them that makes it impossible to
+instituteall of them at once. the requirement that is usually sacrificed is the
+first.kerckhoffs argued strongly against the notion of a field cipher that wouldsimply resist
+solution long enough for the orders it transmitted to becarried out. this was not enough,
+he said, declaring that "the secretmatter in communications sent over a distance very often
+retains itsimportance beyond the day on which it was transmitted." he was on theside of the
+angels, but a practical field cipher that is unbreakable wasnot possible in his day, nor is it
+today, and so military cryptography hassettled for field ciphers that delay but do not defeat
+cryptanalysis.perhaps the most startling requirement, at first glance, was the second.
+kerckhoffs explained that by "system" he meant "thematerial part of the system; tableaux,
+code books, or whatevermechanical apparatus may be necessary," and not "the key proper."kerckhoffs
+here makes for the first time the distinction, now basic tocryptology, between the general
+system and the specific key. why mustthe general system "not require secrecy," as, for example,
+a codebookrequires it? why must it be "a process that. . . our neighbors can evencopy and adopt"?
+because, kerckhoffs said, "it is not necessary toconzure up imaginary phantoms and to suspect
+the incorruptibility ofemployees or subalterns to understand that, if a system
+requiringsecrecy were in the hands of too large a number of individuals, it couldbe compromised
+at each engagement in which one or another of themtook part." this has proved to be true, and
+kerckhoffs' secondrequirement has become widely accepted under a form that is sometimescalled
+the fundamental assumption of military cryptography: that theenemy knows the general system.
+but he must still be unable to solvemessages in it without knowing the specific key. in
+its modernformulation, the kerckhoffs doctrine states that secrecy must residesolely in
+the keys.had kerckhoffs merely published his perceptions of the problemsfacing post-
+telegraph cryptography and his prescriptions for resolvingthem, he would have assured a place for
+himself in the pantheon ofcryptology. but he did more. he contributed a technique of
+cryptanalysisthat is of supreme importance today. called "superimposition,"
+itconstitutes the most general solution for polyalphabetic substitutionsystems. with
+few exceptions, it lays no restrictions on the type or lengthof keys, as does the kasiski
+method, nor on the alphabets, which may beinterrelated or entirely independent. it wants only
+several messages inthe same key. the cryptanalyst must align these one above the other sothat
+letters enciphered with the same keyletter will fall into a singlecolumn. in the simplest
+case, that of a running key (a very longcontinuous text used as a key, as a novel) that restarts
+with eachmessage, he can do this simply by placing all the first letters in the firstcolumn,
+all the second letters in the next column, and so on

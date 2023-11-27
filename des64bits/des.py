@@ -60,7 +60,7 @@ def generate16Keys(key: list):
         else:
             previous_c, previous_d = left_shifts_rounds[str(
                 i - 1)]["c"], left_shifts_rounds[str(i - 1)]["d"]
-        left_shifts_rounds[str(i)] = {
+        left_shifts_rounds[str(i)] = {d
             "c": performLeftShift(previous_c, left_shift_schedule[i]),
             "d": performLeftShift(previous_d, left_shift_schedule[i])
         }
@@ -201,6 +201,10 @@ def round(l: list, r: list, key: list):
         return permutation(step3, P)
     next_l = r
     next_r = xor(l, f(r, key))
+    print("ln-1=      ", l)
+    print("f(Rn-1, k)=", f(r, key))
+    print("Rn=        ", next_r)
+
 
     return next_l, next_r
 
@@ -218,6 +222,7 @@ def apply16Rounds(m:list, keys:dict, decrypt=False):
             l, r = round(l, r, keys[str(i)])
     if not decrypt:
         for i in range(16):
+            print("Step:", i + 1)
             l, r = round(l, r, keys[str(i)])
     
     return permutation(r + l, ip_1_matrix) # reverse the order of l and r
@@ -250,14 +255,19 @@ if __name__ == '__main__':
         1, 1, 0, 0, 1, 1, 0, 1,
         1, 1, 1, 0, 1, 1, 1, 1
     ]
-    encrypted = apply16Rounds(apply16Rounds(m, keys, decrypt=False), keys, decrypt=True)
+    #decrypted = apply16Rounds(apply16Rounds(m, keys, decrypt=False), keys, decrypt=True)
+
+
+    
+    encrypted = apply16Rounds(m, keys, decrypt=False)
+    """
     for i in range(0, len(encrypted), 8):
         group = encrypted[i:i+8]
         print(group)
-
+    """
     # for testing
     # http://des.online-domain-tools.com/
-    print(binMatrixToHexStr(m))
-    print(binMatrixToHexStr(key))
-    print(binMatrixToHexStr(apply16Rounds(m, keys, decrypt=False)))
+    #print(binMatrixToHexStr(m))
+    #print(binMatrixToHexStr(key))
+    #print(binMatrixToHexStr(apply16Rounds(m, keys, decrypt=False)))
     
